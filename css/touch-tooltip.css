@@ -1,0 +1,998 @@
+.ApplyTooltip {
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
+  position: relative;
+  vertical-align: baseline;
+}
+.ApplyTooltip .TouchTooltip {
+  display: block;
+  position: absolute;
+  z-index: 100;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: opacity 0.2s linear, top 0.2s ease-in, bottom 0.2s ease-in, left 0.2s ease-in, right 0.2s ease-in, visibility 0s linear;
+  -webkit-transition-delay: 0.2s, 0.2s, 0.2s, 0.2s, 0.2s, 0.2s;
+  -moz-transition: opacity 0.2s linear 0.2s, top 0.2s ease-in 0.2s, bottom 0.2s ease-in 0.2s, left 0.2s ease-in 0.2s, right 0.2s ease-in 0.2s, visibility 0s linear 0.2s;
+  -o-transition: opacity 0.2s linear 0.2s, top 0.2s ease-in 0.2s, bottom 0.2s ease-in 0.2s, left 0.2s ease-in 0.2s, right 0.2s ease-in 0.2s, visibility 0s linear 0.2s;
+  transition: opacity 0.2s linear 0.2s, top 0.2s ease-in 0.2s, bottom 0.2s ease-in 0.2s, left 0.2s ease-in 0.2s, right 0.2s ease-in 0.2s, visibility 0s linear 0.2s;
+}
+.ApplyTooltip .TouchTooltip.Top {
+  top: 80%;
+  margin-top: 12px;
+}
+.ApplyTooltip .TouchTooltip.Bottom {
+  bottom: 80%;
+  margin-bottom: 12px;
+}
+.ApplyTooltip .TouchTooltip.Left {
+  left: 0;
+}
+.ApplyTooltip .TouchTooltip.Right {
+  right: 0;
+}
+.ApplyTooltip .TouchTooltip.Center {
+  left: 0;
+  right: 0;
+}
+.ApplyTooltip .TouchTooltip.Center.Left {
+  top: -50%;
+  left: 90%;
+  margin-left: 12px;
+  margin-top: -2px;
+  right: auto;
+}
+.ApplyTooltip .TouchTooltip.Center.Right {
+  top: -50%;
+  right: 90%;
+  margin-right: 12px;
+  margin-top: -2px;
+  left: auto;
+}
+.ApplyTooltip:hover .TouchTooltip, .ApplyTooltip.fakeHover .TouchTooltip {
+  visibility: visible;
+  opacity: 1;
+  -webkit-transition: opacity 0.2s, top 0.2s ease-out, bottom 0.2s ease-out, left 0.2s ease-out, right 0.2s ease-out, visibility 0s;
+  -moz-transition: opacity 0.2s, top 0.2s ease-out, bottom 0.2s ease-out, left 0.2s ease-out, right 0.2s ease-out, visibility 0s;
+  -o-transition: opacity 0.2s, top 0.2s ease-out, bottom 0.2s ease-out, left 0.2s ease-out, right 0.2s ease-out, visibility 0s;
+  transition: opacity 0.2s, top 0.2s ease-out, bottom 0.2s ease-out, left 0.2s ease-out, right 0.2s ease-out, visibility 0s;
+}
+.ApplyTooltip:hover .TouchTooltip.Top, .ApplyTooltip.fakeHover .TouchTooltip.Top {
+  top: 100%;
+}
+.ApplyTooltip:hover .TouchTooltip.Bottom, .ApplyTooltip.fakeHover .TouchTooltip.Bottom {
+  bottom: 100%;
+}
+.ApplyTooltip:hover .TouchTooltip.Center.Left, .ApplyTooltip.fakeHover .TouchTooltip.Center.Left {
+  left: 100%;
+}
+.ApplyTooltip:hover .TouchTooltip.Center.Right, .ApplyTooltip.fakeHover .TouchTooltip.Center.Right {
+  right: 100%;
+}
+.ApplyTooltip:hover .TouchTooltip.AnimationStopped, .ApplyTooltip.fakeHover .TouchTooltip.AnimationStopped {
+  -webkit-transition-duration: 0s;
+  -moz-transition-duration: 0s;
+  -o-transition-duration: 0s;
+  transition-duration: 0s;
+}
+.ApplyTooltip.iOS:hover .TouchTooltip {
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  -o-transition: all 1s;
+  transition: all 1s;
+}
+.ApplyTooltip.iOS:hover .TouchTooltip.Top {
+  top: 80%;
+  margin-top: 12px;
+}
+.ApplyTooltip.iOS:hover .TouchTooltip.Bottom {
+  bottom: 80%;
+  margin-bottom: 12px;
+}
+.ApplyTooltip.iOS:hover .TouchTooltip.Center.Left {
+  left: 90%;
+}
+.ApplyTooltip.iOS:hover .TouchTooltip.Center.Right {
+  right: 90%;
+}
+
+.TouchTooltip {
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
+  vertical-align: baseline;
+  -webkit-transition: opacity 0.3s, top 0.2s;
+  -moz-transition: opacity 0.3s, top 0.2s;
+  -o-transition: opacity 0.3s, top 0.2s;
+  transition: opacity 0.3s, top 0.2s;
+  font-style: normal;
+  text-decoration: none;
+  position: relative;
+  cursor: default;
+  white-space: nowrap;
+  z-index: 1;
+}
+.TouchTooltip:before {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 19.8px;
+  line-height: 1.3em;
+  font-weight: bold;
+  color: transparent;
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  text-align: center;
+  z-index: -1;
+}
+.TouchTooltip .Content {
+  display: block;
+  padding: 10px;
+  text-align: center;
+  -webkit-transition: all, 0.5s;
+  -moz-transition: all, 0.5s;
+  -o-transition: all, 0.5s;
+  transition: all, 0.5s;
+}
+.TouchTooltip .Content:not([ie]) {
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled='false');
+}
+.TouchTooltip .Content:before {
+  content: "";
+  border: 7px inset transparent;
+  width: 0;
+  height: 0;
+  position: absolute;
+}
+.TouchTooltip .Content:after {
+  content: "";
+  border: 6px inset transparent;
+  width: 0;
+  height: 0;
+  position: absolute;
+}
+.TouchTooltip.Small {
+  width: 150px;
+  white-space: normal;
+}
+.TouchTooltip.Small.Top, .TouchTooltip.Small.Bottom {
+  left: 50%;
+  margin-left: -75px;
+  right: auto;
+}
+.TouchTooltip.Small.Top.Left, .TouchTooltip.Small.Top.Right, .TouchTooltip.Small.Bottom.Left, .TouchTooltip.Small.Bottom.Right {
+  left: auto;
+  right: auto;
+  margin-left: auto;
+}
+.TouchTooltip.Medium {
+  width: 250px;
+  white-space: normal;
+}
+.TouchTooltip.Medium.Top, .TouchTooltip.Medium.Bottom {
+  left: 50%;
+  margin-left: -125px;
+  right: auto;
+}
+.TouchTooltip.Medium.Top.Left, .TouchTooltip.Medium.Top.Right, .TouchTooltip.Medium.Bottom.Left, .TouchTooltip.Medium.Bottom.Right {
+  left: auto;
+  right: auto;
+  margin-left: auto;
+}
+.TouchTooltip.Large {
+  width: 350px;
+  white-space: normal;
+}
+.TouchTooltip.Large.Top, .TouchTooltip.Large.Bottom {
+  left: 50%;
+  margin-left: -175px;
+  right: auto;
+}
+.TouchTooltip.Large.Top.Left, .TouchTooltip.Large.Top.Right, .TouchTooltip.Large.Bottom.Left, .TouchTooltip.Large.Bottom.Right {
+  left: auto;
+  right: auto;
+  margin-left: auto;
+}
+.TouchTooltip.Huge {
+  width: 450px;
+  white-space: normal;
+}
+.TouchTooltip.Huge.Top, .TouchTooltip.Huge.Bottom {
+  left: 50%;
+  margin-left: -225px;
+  right: auto;
+}
+.TouchTooltip.Huge.Top.Left, .TouchTooltip.Huge.Top.Right, .TouchTooltip.Huge.Bottom.Left, .TouchTooltip.Huge.Bottom.Right {
+  left: auto;
+  right: auto;
+  margin-left: auto;
+}
+.TouchTooltip.Shadow:before {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+.TouchTooltip.Shadow .Content {
+  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+.TouchTooltip.Round .Content {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+}
+.TouchTooltip.Top {
+  margin-top: 11px;
+}
+.TouchTooltip.Top:before {
+  content: "^";
+  top: -12px;
+  left: 50%;
+  margin-left: -7px;
+}
+.TouchTooltip.Top .Content:before {
+  border-top-width: 11px;
+  border-bottom-width: 12px;
+  border-bottom-style: solid;
+  top: -23px;
+  left: 50%;
+  margin-left: -7px;
+}
+.TouchTooltip.Top .Content:after {
+  border-top-width: 11px;
+  border-bottom-width: 11px;
+  border-bottom-style: solid;
+  top: -21px;
+  left: 50%;
+  margin-left: -6px;
+}
+.TouchTooltip.Top.Left:before {
+  left: 11px;
+  margin-left: 0;
+}
+.TouchTooltip.Top.Left .Content {
+  text-align: left;
+}
+.TouchTooltip.Top.Left .Content:before {
+  left: 11px;
+  margin-left: 0;
+}
+.TouchTooltip.Top.Left .Content:after {
+  left: 12px;
+  margin-left: 0;
+}
+.TouchTooltip.Top.Right:before {
+  right: 11px;
+  left: auto;
+  margin-left: 0;
+}
+.TouchTooltip.Top.Right .Content {
+  text-align: right;
+}
+.TouchTooltip.Top.Right .Content:before {
+  right: 11px;
+  left: auto;
+  margin-left: 0;
+}
+.TouchTooltip.Top.Right .Content:after {
+  right: 12px;
+  left: auto;
+  margin-left: 0;
+}
+.TouchTooltip.Bottom {
+  margin-bottom: 11px;
+}
+.TouchTooltip.Bottom:before {
+  content: "v";
+  bottom: -6px;
+  left: 50%;
+  margin-left: -7px;
+}
+.TouchTooltip.Bottom .Content:before {
+  border-top-width: 12px;
+  border-top-style: solid;
+  border-bottom-width: 11px;
+  bottom: -23px;
+  left: 50%;
+  margin-left: -7px;
+}
+.TouchTooltip.Bottom .Content:after {
+  border-top-width: 11px;
+  border-top-style: solid;
+  border-bottom-width: 11px;
+  bottom: -21px;
+  left: 50%;
+  margin-left: -6px;
+}
+.TouchTooltip.Bottom.Left:before {
+  left: 11px;
+  margin-left: 0;
+}
+.TouchTooltip.Bottom.Left .Content {
+  text-align: left;
+}
+.TouchTooltip.Bottom.Left .Content:before {
+  left: 11px;
+  margin-left: 0;
+}
+.TouchTooltip.Bottom.Left .Content:after {
+  left: 12px;
+  margin-left: 0;
+}
+.TouchTooltip.Bottom.Right:before {
+  right: 11px;
+  left: auto;
+  margin-left: 0;
+}
+.TouchTooltip.Bottom.Right .Content {
+  text-align: right;
+}
+.TouchTooltip.Bottom.Right .Content:before {
+  right: 11px;
+  left: auto;
+  margin-left: 0;
+}
+.TouchTooltip.Bottom.Right .Content:after {
+  right: 12px;
+  left: auto;
+  margin-left: 0;
+}
+.TouchTooltip.Left:before {
+  left: 11px;
+}
+.TouchTooltip.Left .Content {
+  text-align: left;
+}
+.TouchTooltip.Left .Content:before {
+  left: 11px;
+}
+.TouchTooltip.Left .Content:after {
+  left: 12px;
+}
+.TouchTooltip.Left.Center {
+  margin-left: 11px;
+}
+.TouchTooltip.Left.Center:before {
+  content: "<";
+  top: 50%;
+  margin-top: -12px;
+  left: -12px;
+}
+.TouchTooltip.Left.Center .Content:before {
+  border-left-width: 11px;
+  border-right-width: 12px;
+  border-right-style: solid;
+  top: 50%;
+  margin-top: -7px;
+  left: -23px;
+}
+.TouchTooltip.Left.Center .Content:after {
+  border-left-width: 11px;
+  border-right-width: 11px;
+  border-right-style: solid;
+  top: 50%;
+  margin-top: -6px;
+  left: -21px;
+}
+.TouchTooltip.Right:before {
+  right: 11px;
+}
+.TouchTooltip.Right .Content {
+  text-align: right;
+}
+.TouchTooltip.Right .Content:before {
+  right: 11px;
+}
+.TouchTooltip.Right .Content:after {
+  right: 12px;
+}
+.TouchTooltip.Right.Center {
+  margin-right: 11px;
+}
+.TouchTooltip.Right.Center:before {
+  content: ">";
+  top: 50%;
+  margin-top: -12px;
+  right: -12px;
+}
+.TouchTooltip.Right.Center .Content:before {
+  border-right-width: 11px;
+  border-left-width: 12px;
+  border-left-style: solid;
+  top: 50%;
+  margin-top: -7px;
+  right: -23px;
+}
+.TouchTooltip.Right.Center .Content:after {
+  border-right-width: 11px;
+  border-left-width: 11px;
+  border-left-style: solid;
+  top: 50%;
+  margin-top: -6px;
+  right: -21px;
+}
+.TouchTooltip.Default .Content {
+  border: 1px solid white;
+  color: #333333;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFFFFFFF', endColorstr='#FFEEEEEE');
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2VlZWVlZSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #eeeeee));
+  background-image: -webkit-linear-gradient(top, #ffffff, #eeeeee);
+  background-image: -moz-linear-gradient(top, #ffffff, #eeeeee);
+  background-image: -o-linear-gradient(top, #ffffff, #eeeeee);
+  background-image: linear-gradient(top, #ffffff, #eeeeee);
+  text-shadow: 1px 1px 1px white;
+}
+.TouchTooltip.Default .Content:not([ie]) {
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled='false');
+}
+.TouchTooltip.Default.Top .Content:before {
+  border-bottom-color: white;
+}
+.TouchTooltip.Default.Top .Content:after {
+  border-bottom-color: white;
+}
+.TouchTooltip.Default.Bottom .Content:before {
+  border-top-color: white;
+}
+.TouchTooltip.Default.Bottom .Content:after {
+  border-top-color: #eeeeee;
+}
+.TouchTooltip.Default.Left.Center .Content:before {
+  border-right-color: white;
+}
+.TouchTooltip.Default.Left.Center .Content:after {
+  border-right-color: #f6f6f6;
+}
+.TouchTooltip.Default.Right.Center .Content:before {
+  border-left-color: white;
+}
+.TouchTooltip.Default.Right.Center .Content:after {
+  border-left-color: #f6f6f6;
+}
+.TouchTooltip.Success .Content {
+  border: 1px solid #abd600;
+  color: white;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFA3CC00', endColorstr='#FF69C000');
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2EzY2MwMCIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzY5YzAwMCIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #a3cc00), color-stop(100%, #69c000));
+  background-image: -webkit-linear-gradient(top, #a3cc00, #69c000);
+  background-image: -moz-linear-gradient(top, #a3cc00, #69c000);
+  background-image: -o-linear-gradient(top, #a3cc00, #69c000);
+  background-image: linear-gradient(top, #a3cc00, #69c000);
+  text-shadow: -1px -1px 1px #66bb00;
+}
+.TouchTooltip.Success .Content:not([ie]) {
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled='false');
+}
+.TouchTooltip.Success.Top .Content:before {
+  border-bottom-color: #abd600;
+}
+.TouchTooltip.Success.Top .Content:after {
+  border-bottom-color: #a3cc00;
+}
+.TouchTooltip.Success.Bottom .Content:before {
+  border-top-color: #abd600;
+}
+.TouchTooltip.Success.Bottom .Content:after {
+  border-top-color: #69c000;
+}
+.TouchTooltip.Success.Left.Center .Content:before {
+  border-right-color: #abd600;
+}
+.TouchTooltip.Success.Left.Center .Content:after {
+  border-right-color: #71cf00;
+}
+.TouchTooltip.Success.Right.Center .Content:before {
+  border-left-color: #abd600;
+}
+.TouchTooltip.Success.Right.Center .Content:after {
+  border-left-color: #71cf00;
+}
+.TouchTooltip.Danger .Content {
+  border: 1px solid #f80000;
+  color: white;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFEE0000', endColorstr='#FFB70000');
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2VlMDAwMCIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2I3MDAwMCIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ee0000), color-stop(100%, #b70000));
+  background-image: -webkit-linear-gradient(top, #ee0000, #b70000);
+  background-image: -moz-linear-gradient(top, #ee0000, #b70000);
+  background-image: -o-linear-gradient(top, #ee0000, #b70000);
+  background-image: linear-gradient(top, #ee0000, #b70000);
+  text-shadow: -1px -1px 1px #b20000;
+}
+.TouchTooltip.Danger .Content:not([ie]) {
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled='false');
+}
+.TouchTooltip.Danger.Top .Content:before {
+  border-bottom-color: #f80000;
+}
+.TouchTooltip.Danger.Top .Content:after {
+  border-bottom-color: #ee0000;
+}
+.TouchTooltip.Danger.Bottom .Content:before {
+  border-top-color: #f80000;
+}
+.TouchTooltip.Danger.Bottom .Content:after {
+  border-top-color: #b70000;
+}
+.TouchTooltip.Danger.Left.Center .Content:before {
+  border-right-color: #f80000;
+}
+.TouchTooltip.Danger.Left.Center .Content:after {
+  border-right-color: #c60000;
+}
+.TouchTooltip.Danger.Right.Center .Content:before {
+  border-left-color: #f80000;
+}
+.TouchTooltip.Danger.Right.Center .Content:after {
+  border-left-color: #c60000;
+}
+.TouchTooltip.Warning .Content {
+  border: 1px solid #ffad0a;
+  color: white;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFFFAA00', endColorstr='#FFE06E1A');
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmYWEwMCIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2UwNmUxYSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffaa00), color-stop(100%, #e06e1a));
+  background-image: -webkit-linear-gradient(top, #ffaa00, #e06e1a);
+  background-image: -moz-linear-gradient(top, #ffaa00, #e06e1a);
+  background-image: -o-linear-gradient(top, #ffaa00, #e06e1a);
+  background-image: linear-gradient(top, #ffaa00, #e06e1a);
+  text-shadow: -1px -1px 1px #db6c19;
+}
+.TouchTooltip.Warning .Content:not([ie]) {
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled='false');
+}
+.TouchTooltip.Warning.Top .Content:before {
+  border-bottom-color: #ffad0a;
+}
+.TouchTooltip.Warning.Top .Content:after {
+  border-bottom-color: #ffaa00;
+}
+.TouchTooltip.Warning.Bottom .Content:before {
+  border-top-color: #ffad0a;
+}
+.TouchTooltip.Warning.Bottom .Content:after {
+  border-top-color: #e06e1a;
+}
+.TouchTooltip.Warning.Left.Center .Content:before {
+  border-right-color: #ffad0a;
+}
+.TouchTooltip.Warning.Left.Center .Content:after {
+  border-right-color: #e67624;
+}
+.TouchTooltip.Warning.Right.Center .Content:before {
+  border-left-color: #ffad0a;
+}
+.TouchTooltip.Warning.Right.Center .Content:after {
+  border-left-color: #e67624;
+}
+.TouchTooltip.Dark .Content {
+  border: 1px solid #5a5a5a;
+  color: white;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF555555', endColorstr='#FF333333');
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzU1NTU1NSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzMzMzMzMyIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #555555), color-stop(100%, #333333));
+  background-image: -webkit-linear-gradient(top, #555555, #333333);
+  background-image: -moz-linear-gradient(top, #555555, #333333);
+  background-image: -o-linear-gradient(top, #555555, #333333);
+  background-image: linear-gradient(top, #555555, #333333);
+  text-shadow: -1px -1px 1px #303030;
+}
+.TouchTooltip.Dark .Content:not([ie]) {
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled='false');
+}
+.TouchTooltip.Dark.Top .Content:before {
+  border-bottom-color: #5a5a5a;
+}
+.TouchTooltip.Dark.Top .Content:after {
+  border-bottom-color: #555555;
+}
+.TouchTooltip.Dark.Bottom .Content:before {
+  border-top-color: #5a5a5a;
+}
+.TouchTooltip.Dark.Bottom .Content:after {
+  border-top-color: #333333;
+}
+.TouchTooltip.Dark.Left.Center .Content:before {
+  border-right-color: #5a5a5a;
+}
+.TouchTooltip.Dark.Left.Center .Content:after {
+  border-right-color: #3b3b3b;
+}
+.TouchTooltip.Dark.Right.Center .Content:before {
+  border-left-color: #5a5a5a;
+}
+.TouchTooltip.Dark.Right.Center .Content:after {
+  border-left-color: #3b3b3b;
+}
+.TouchTooltip.Note .Content {
+  border: 1px solid #f4f8f9;
+  color: black;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFEEF3F5', endColorstr='#FFD8E3E9');
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2VlZjNmNSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2Q4ZTNlOSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #eef3f5), color-stop(100%, #d8e3e9));
+  background-image: -webkit-linear-gradient(top, #eef3f5, #d8e3e9);
+  background-image: -moz-linear-gradient(top, #eef3f5, #d8e3e9);
+  background-image: -o-linear-gradient(top, #eef3f5, #d8e3e9);
+  background-image: linear-gradient(top, #eef3f5, #d8e3e9);
+  text-shadow: 1px 1px 1px #f4f8f9;
+}
+.TouchTooltip.Note .Content:not([ie]) {
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled='false');
+}
+.TouchTooltip.Note.Top .Content:before {
+  border-bottom-color: #f4f8f9;
+}
+.TouchTooltip.Note.Top .Content:after {
+  border-bottom-color: #eef3f5;
+}
+.TouchTooltip.Note.Bottom .Content:before {
+  border-top-color: #f4f8f9;
+}
+.TouchTooltip.Note.Bottom .Content:after {
+  border-top-color: #d8e3e9;
+}
+.TouchTooltip.Note.Left.Center .Content:before {
+  border-right-color: #f4f8f9;
+}
+.TouchTooltip.Note.Left.Center .Content:after {
+  border-right-color: #e2eaef;
+}
+.TouchTooltip.Note.Right.Center .Content:before {
+  border-left-color: #f4f8f9;
+}
+.TouchTooltip.Note.Right.Center .Content:after {
+  border-left-color: #e2eaef;
+}
+.TouchTooltip.YourNewTheme .Content {
+  border: 1px solid #f4f8f9;
+  color: black;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFEEF3F5', endColorstr='#FFEEF3F5');
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2VlZjNmNSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2VlZjNmNSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #eef3f5), color-stop(100%, #eef3f5));
+  background-image: -webkit-linear-gradient(top, #eef3f5, #eef3f5);
+  background-image: -moz-linear-gradient(top, #eef3f5, #eef3f5);
+  background-image: -o-linear-gradient(top, #eef3f5, #eef3f5);
+  background-image: linear-gradient(top, #eef3f5, #eef3f5);
+  text-shadow: 1px 1px 1px #f4f8f9;
+}
+.TouchTooltip.YourNewTheme .Content:not([ie]) {
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled='false');
+}
+.TouchTooltip.YourNewTheme.Top .Content:before {
+  border-bottom-color: #f4f8f9;
+}
+.TouchTooltip.YourNewTheme.Top .Content:after {
+  border-bottom-color: #eef3f5;
+}
+.TouchTooltip.YourNewTheme.Bottom .Content:before {
+  border-top-color: #f4f8f9;
+}
+.TouchTooltip.YourNewTheme.Bottom .Content:after {
+  border-top-color: #eef3f5;
+}
+.TouchTooltip.YourNewTheme.Left.Center .Content:before {
+  border-right-color: #f4f8f9;
+}
+.TouchTooltip.YourNewTheme.Left.Center .Content:after {
+  border-right-color: #f8fafb;
+}
+.TouchTooltip.YourNewTheme.Right.Center .Content:before {
+  border-left-color: #f4f8f9;
+}
+.TouchTooltip.YourNewTheme.Right.Center .Content:after {
+  border-left-color: #f8fafb;
+}
+.TouchTooltip.Metro.Purple .Content {
+  padding: 20px 10px;
+  color: white;
+  background: #a200ff;
+}
+.TouchTooltip.Metro.Purple.Top .Content:before {
+  border-bottom-color: #a200ff;
+}
+.TouchTooltip.Metro.Purple.Top .Content:after {
+  border-bottom-color: #a200ff;
+}
+.TouchTooltip.Metro.Purple.Bottom .Content:before {
+  border-top-color: #a200ff;
+}
+.TouchTooltip.Metro.Purple.Bottom .Content:after {
+  border-top-color: #a200ff;
+}
+.TouchTooltip.Metro.Purple.Left.Center .Content:before {
+  border-right-color: #a200ff;
+}
+.TouchTooltip.Metro.Purple.Left.Center .Content:after {
+  border-right-color: #a200ff;
+}
+.TouchTooltip.Metro.Purple.Right.Center .Content:before {
+  border-left-color: #a200ff;
+}
+.TouchTooltip.Metro.Purple.Right.Center .Content:after {
+  border-left-color: #a200ff;
+}
+.TouchTooltip.Metro.Magenta .Content {
+  padding: 20px 10px;
+  color: white;
+  background: #ff0097;
+}
+.TouchTooltip.Metro.Magenta.Top .Content:before {
+  border-bottom-color: #ff0097;
+}
+.TouchTooltip.Metro.Magenta.Top .Content:after {
+  border-bottom-color: #ff0097;
+}
+.TouchTooltip.Metro.Magenta.Bottom .Content:before {
+  border-top-color: #ff0097;
+}
+.TouchTooltip.Metro.Magenta.Bottom .Content:after {
+  border-top-color: #ff0097;
+}
+.TouchTooltip.Metro.Magenta.Left.Center .Content:before {
+  border-right-color: #ff0097;
+}
+.TouchTooltip.Metro.Magenta.Left.Center .Content:after {
+  border-right-color: #ff0097;
+}
+.TouchTooltip.Metro.Magenta.Right.Center .Content:before {
+  border-left-color: #ff0097;
+}
+.TouchTooltip.Metro.Magenta.Right.Center .Content:after {
+  border-left-color: #ff0097;
+}
+.TouchTooltip.Metro.Teal .Content {
+  padding: 20px 10px;
+  color: white;
+  background: #00aba9;
+}
+.TouchTooltip.Metro.Teal.Top .Content:before {
+  border-bottom-color: #00aba9;
+}
+.TouchTooltip.Metro.Teal.Top .Content:after {
+  border-bottom-color: #00aba9;
+}
+.TouchTooltip.Metro.Teal.Bottom .Content:before {
+  border-top-color: #00aba9;
+}
+.TouchTooltip.Metro.Teal.Bottom .Content:after {
+  border-top-color: #00aba9;
+}
+.TouchTooltip.Metro.Teal.Left.Center .Content:before {
+  border-right-color: #00aba9;
+}
+.TouchTooltip.Metro.Teal.Left.Center .Content:after {
+  border-right-color: #00aba9;
+}
+.TouchTooltip.Metro.Teal.Right.Center .Content:before {
+  border-left-color: #00aba9;
+}
+.TouchTooltip.Metro.Teal.Right.Center .Content:after {
+  border-left-color: #00aba9;
+}
+.TouchTooltip.Metro.Lime .Content {
+  padding: 20px 10px;
+  color: white;
+  background: #8cbf26;
+}
+.TouchTooltip.Metro.Lime.Top .Content:before {
+  border-bottom-color: #8cbf26;
+}
+.TouchTooltip.Metro.Lime.Top .Content:after {
+  border-bottom-color: #8cbf26;
+}
+.TouchTooltip.Metro.Lime.Bottom .Content:before {
+  border-top-color: #8cbf26;
+}
+.TouchTooltip.Metro.Lime.Bottom .Content:after {
+  border-top-color: #8cbf26;
+}
+.TouchTooltip.Metro.Lime.Left.Center .Content:before {
+  border-right-color: #8cbf26;
+}
+.TouchTooltip.Metro.Lime.Left.Center .Content:after {
+  border-right-color: #8cbf26;
+}
+.TouchTooltip.Metro.Lime.Right.Center .Content:before {
+  border-left-color: #8cbf26;
+}
+.TouchTooltip.Metro.Lime.Right.Center .Content:after {
+  border-left-color: #8cbf26;
+}
+.TouchTooltip.Metro.Brown .Content {
+  padding: 20px 10px;
+  color: white;
+  background: #a05000;
+}
+.TouchTooltip.Metro.Brown.Top .Content:before {
+  border-bottom-color: #a05000;
+}
+.TouchTooltip.Metro.Brown.Top .Content:after {
+  border-bottom-color: #a05000;
+}
+.TouchTooltip.Metro.Brown.Bottom .Content:before {
+  border-top-color: #a05000;
+}
+.TouchTooltip.Metro.Brown.Bottom .Content:after {
+  border-top-color: #a05000;
+}
+.TouchTooltip.Metro.Brown.Left.Center .Content:before {
+  border-right-color: #a05000;
+}
+.TouchTooltip.Metro.Brown.Left.Center .Content:after {
+  border-right-color: #a05000;
+}
+.TouchTooltip.Metro.Brown.Right.Center .Content:before {
+  border-left-color: #a05000;
+}
+.TouchTooltip.Metro.Brown.Right.Center .Content:after {
+  border-left-color: #a05000;
+}
+.TouchTooltip.Metro.Pink .Content {
+  padding: 20px 10px;
+  color: white;
+  background: #e671b8;
+}
+.TouchTooltip.Metro.Pink.Top .Content:before {
+  border-bottom-color: #e671b8;
+}
+.TouchTooltip.Metro.Pink.Top .Content:after {
+  border-bottom-color: #e671b8;
+}
+.TouchTooltip.Metro.Pink.Bottom .Content:before {
+  border-top-color: #e671b8;
+}
+.TouchTooltip.Metro.Pink.Bottom .Content:after {
+  border-top-color: #e671b8;
+}
+.TouchTooltip.Metro.Pink.Left.Center .Content:before {
+  border-right-color: #e671b8;
+}
+.TouchTooltip.Metro.Pink.Left.Center .Content:after {
+  border-right-color: #e671b8;
+}
+.TouchTooltip.Metro.Pink.Right.Center .Content:before {
+  border-left-color: #e671b8;
+}
+.TouchTooltip.Metro.Pink.Right.Center .Content:after {
+  border-left-color: #e671b8;
+}
+.TouchTooltip.Metro.Orange .Content {
+  padding: 20px 10px;
+  color: white;
+  background: #f09609;
+}
+.TouchTooltip.Metro.Orange.Top .Content:before {
+  border-bottom-color: #f09609;
+}
+.TouchTooltip.Metro.Orange.Top .Content:after {
+  border-bottom-color: #f09609;
+}
+.TouchTooltip.Metro.Orange.Bottom .Content:before {
+  border-top-color: #f09609;
+}
+.TouchTooltip.Metro.Orange.Bottom .Content:after {
+  border-top-color: #f09609;
+}
+.TouchTooltip.Metro.Orange.Left.Center .Content:before {
+  border-right-color: #f09609;
+}
+.TouchTooltip.Metro.Orange.Left.Center .Content:after {
+  border-right-color: #f09609;
+}
+.TouchTooltip.Metro.Orange.Right.Center .Content:before {
+  border-left-color: #f09609;
+}
+.TouchTooltip.Metro.Orange.Right.Center .Content:after {
+  border-left-color: #f09609;
+}
+.TouchTooltip.Metro.Blue .Content {
+  padding: 20px 10px;
+  color: white;
+  background: #1ba1e2;
+}
+.TouchTooltip.Metro.Blue.Top .Content:before {
+  border-bottom-color: #1ba1e2;
+}
+.TouchTooltip.Metro.Blue.Top .Content:after {
+  border-bottom-color: #1ba1e2;
+}
+.TouchTooltip.Metro.Blue.Bottom .Content:before {
+  border-top-color: #1ba1e2;
+}
+.TouchTooltip.Metro.Blue.Bottom .Content:after {
+  border-top-color: #1ba1e2;
+}
+.TouchTooltip.Metro.Blue.Left.Center .Content:before {
+  border-right-color: #1ba1e2;
+}
+.TouchTooltip.Metro.Blue.Left.Center .Content:after {
+  border-right-color: #1ba1e2;
+}
+.TouchTooltip.Metro.Blue.Right.Center .Content:before {
+  border-left-color: #1ba1e2;
+}
+.TouchTooltip.Metro.Blue.Right.Center .Content:after {
+  border-left-color: #1ba1e2;
+}
+.TouchTooltip.Metro.Red .Content {
+  padding: 20px 10px;
+  color: white;
+  background: #e51400;
+}
+.TouchTooltip.Metro.Red.Top .Content:before {
+  border-bottom-color: #e51400;
+}
+.TouchTooltip.Metro.Red.Top .Content:after {
+  border-bottom-color: #e51400;
+}
+.TouchTooltip.Metro.Red.Bottom .Content:before {
+  border-top-color: #e51400;
+}
+.TouchTooltip.Metro.Red.Bottom .Content:after {
+  border-top-color: #e51400;
+}
+.TouchTooltip.Metro.Red.Left.Center .Content:before {
+  border-right-color: #e51400;
+}
+.TouchTooltip.Metro.Red.Left.Center .Content:after {
+  border-right-color: #e51400;
+}
+.TouchTooltip.Metro.Red.Right.Center .Content:before {
+  border-left-color: #e51400;
+}
+.TouchTooltip.Metro.Red.Right.Center .Content:after {
+  border-left-color: #e51400;
+}
+.TouchTooltip.Metro.Green .Content {
+  padding: 20px 10px;
+  color: white;
+  background: #339933;
+}
+.TouchTooltip.Metro.Green.Top .Content:before {
+  border-bottom-color: #339933;
+}
+.TouchTooltip.Metro.Green.Top .Content:after {
+  border-bottom-color: #339933;
+}
+.TouchTooltip.Metro.Green.Bottom .Content:before {
+  border-top-color: #339933;
+}
+.TouchTooltip.Metro.Green.Bottom .Content:after {
+  border-top-color: #339933;
+}
+.TouchTooltip.Metro.Green.Left.Center .Content:before {
+  border-right-color: #339933;
+}
+.TouchTooltip.Metro.Green.Left.Center .Content:after {
+  border-right-color: #339933;
+}
+.TouchTooltip.Metro.Green.Right.Center .Content:before {
+  border-left-color: #339933;
+}
+.TouchTooltip.Metro.Green.Right.Center .Content:after {
+  border-left-color: #339933;
+}

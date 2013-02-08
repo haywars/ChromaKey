@@ -1,0 +1,90 @@
+/* 
+Company: MetroClick;
+Author: Sam Hayward;
+Title: Milk Lounge;
+Ver: 1.0;
+
+----- RESET CSS -----
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+	color:#000;
+	background: #FFF;
+	font-family: 'Open Sans', sans-serif;
+   /* -webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	overflow:hidden; */
+}
+
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*HACKS*/
+div.Content {opacity: .4;}
+
+/*-- Header --*/
+
+html {height:100%; overflow:hidden;}
+body{height:100%; background:url(images/grid.png);}
+section{height:100%;}
+article {height:100%; float:left; background: white;}
+article + article {background:none; float:none; width:700px; padding: 50px 0 0 0; margin: auto; }
+div.header {padding: 15px 20px; border-right: 1px solid #24A039; overflow:hidden; width:150px; height:100%;}
+h1.logo {text-indent:-9999px; background:url(images/sprites.png); height:45px; width:150px;}
+div.header a {text-decoration: none; color:#000; display: block; margin: 20px 0;}
+div.header a:hover {color:#cacaca;}
+div.header li {padding:10px 20px; line-height:1.9em; text-align: center;}
+
+/*-- Photo --*/
+#cOutput {height: 400px; width: 400px; background: #CACACA; float:left;}
+.vloc img{float:left;}
+.canvasimage {float:left;}
+span.controls {display:block; float:right;}
+div.takepic {margin:0 5px;}
+dl.cambtts {height: 125px;}
+dl.cambtts dt {cursor: pointer; margin: 0 14px; width:115px; height:60px; background:url(images/button_sprites.png); text-indent:-9999px; float:left;}
+dl.cambtts dt:hover {background:url(images/button_sprites.png) -112px 0px}
+dl.cambtts dt+dt {background:url(images/button_sprites.png) 0 -63px;}
+dl.cambtts dt+dt:hover {background:url(images/button_sprites.png) -112px -63px;}
